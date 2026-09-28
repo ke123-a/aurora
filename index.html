@@ -1,995 +1,712 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EchoBox — Acoustic Edge-Lit Display Showcase | Kickstarter</title>
-  <style>
-    :root {
-      --bg: #FAF7F2;
-      --card-bg: #FFFFFF;
-      --card-border: #EFE6DC;
-      --text-main: #2D241E;
-      --text-muted: #7D6F64;
-      --accent: #E07A5F;
-      --accent-soft: #FDEEE9;
-      --accent-hover: #CC654A;
-      --accent-glow: rgba(224, 122, 95, 0.28);
-      --gold-warm: #F4A261;
-      --gold-glow: rgba(244, 162, 97, 0.35);
-      --max-width: 1100px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EchoBox — Acoustic Edge-Lit Display Showcase | Kickstarter VIP</title>
+<meta name="description" content="A quiet, warm-lit desktop sanctuary for your favorite figures, polaroids, and the voices you never want to forget. 30% OFF on Kickstarter.">
+<link rel="canonical" href="https://auroraphxgrove.com/">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { 
-      background-color: var(--bg); 
-      color: var(--text-main); 
-      line-height: 1.65; 
-      overflow-x: hidden;
-      background-image: radial-gradient(#E8DFD5 0.75px, transparent 0.75px);
-      background-size: 24px 24px;
-    }
+<style>
+:root {
+--bg: #FAF7F2;
+--card-bg: #FFFFFF;
+--card-border: #EADBCE;
 
-    /* Announcement Banner */
-    .top-bar {
-      background: linear-gradient(90deg, #FFF3EC, #FFE8D6, #FFF3EC);
-      border-bottom: 1px solid var(--card-border);
-      text-align: center;
-      padding: 11px 16px;
-      font-size: 0.88rem;
-      color: #6D5D52;
-      font-weight: 500;
-    }
-    .top-bar a {
-      color: var(--accent);
-      font-weight: 700;
-      text-decoration: underline;
-      margin-left: 6px;
-    }
-    .top-bar a:hover { color: var(--accent-hover); }
+--text-main: #2D2621;
+--text-muted: #7A7269;
+--accent: #E07A5F;
+--accent-warm: #F4A261;
+--accent-glow: rgba(224, 122, 95, 0.2);
+--accent-hover: #C9664B;
+--badge-bg: #FFF3EB;
+--max-width: 1120px;
+}
 
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+body {
+background-color: var(--bg);
+color: var(--text-main);
+line-height: 1.6;
+overflow-x: hidden;
+background-image: radial-gradient(#E8DFD5 
 
-    /* Navigation Bar */
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(235, 220, 208, 0.6);
-    }
-    .nav-brand {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-    }
-    .nav-brand span.tag {
-      font-size: 0.7rem;
-      background: #EEF9F2;
-      color: #1B8A5A;
-      border: 1px solid #B7EBD0;
-      padding: 2px 8px;
-      border-radius: 9999px;
-      font-weight: 700;
-    }
-    .btn-ks-nav {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 18px;
-      border-radius: 9999px;
-      background: #FFFFFF;
-      border: 1.5px solid #05CE78;
-      color: #0B6E40;
-      font-weight: 700;
-      font-size: 0.86rem;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .btn-ks-nav:hover {
-      background: #05CE78;
-      color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(5, 206, 120, 0.25);
-    }
+1px, transparent 1px);
+background-size: 24px 24px;
+}
 
-    /* Hero Section */
-    .hero {
-      padding: 56px 0 60px;
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 44px;
-      align-items: center;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 14px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(224, 122, 95, 0.35);
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border-radius: 9999px;
-      margin-bottom: 18px;
-    }
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background-color: #05CE78;
-    }
-    .hero h1 {
-      font-size: 2.85rem;
-      line-height: 1.2;
-      margin-bottom: 18px;
-      letter-spacing: -0.02em;
-      color: #2B211B;
-    }
-    .hero p.lead {
-      color: var(--text-muted);
-      font-size: 1.15rem;
-      margin-bottom: 26px;
-    }
+/* Top Urgency Bar */
+.top-bar-link {
+display: block;
+text-decoration: none;
+background: linear-gradient(90deg, #FDE8DB 0%, #FFF1E6 50%, #FDE8DB 100%);
+border-bottom: 1px solid var(--card-border);
+text-align: center;
+padding: 10px 16px;
+font-size: 0.88rem;
+color: #6E5D53;
+cursor: pointer;
+transition: background 0.2s;
+}
+.top-bar-link:hover { background: #FADBC8; }
+.top-bar-link strong { color: var(--accent); }
 
-    /* Benefits Pills */
-    .pills { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-    .pill-item { 
-      display: flex; 
-      align-items: center; 
-      gap: 10px; 
-      font-size: 0.96rem; 
-      color: #4A3E36; 
-    }
-    .pill-item span.icon { 
-      color: var(--accent); 
-      font-weight: bold; 
-      background: var(--accent-soft);
-      width: 24px;
-      height: 24px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-    }
 
-    /* Form Styles */
-    .lead-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-width: 500px;
-    }
-    .input-row { display: flex; gap: 10px; }
-    .lead-form input[type="email"] {
-      flex: 1;
-      padding: 14px 18px;
-      border-radius: 10px;
-      background: #FFFFFF;
-      border: 1.5px solid var(--card-border);
-      color: var(--text-main);
-      font-size: 0.95rem;
-      outline: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    }
-    .lead-form input[type="email"]:focus { 
-      border-color: var(--accent); 
-      box-shadow: 0 0 0 3px var(--accent-glow); 
-    }
-    .btn-cta {
-      padding: 14px 26px;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--gold-warm) 100%);
-      color: #FFFFFF;
-      font-weight: 700;
-      font-size: 0.95rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.25s ease;
-      box-shadow: 0 4px 14px rgba(224, 122, 95, 0.35);
-    }
-    .btn-cta:hover { 
-      transform: translateY(-2px); 
-      box-shadow: 0 6px 20px rgba(224, 122, 95, 0.45);
-    }
+/* Navbar */
+nav.navbar {
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 18px 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.brand-logo {
+font-size: 1.35rem;
+font-weight: 800;
+color: var(--text-main);
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.nav-ks-btn {
 
-    .hero-actions-secondary {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 6px;
-      flex-wrap: wrap;
-    }
-    .link-ks-secondary {
-      font-size: 0.88rem;
-      color: #15803D;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .link-ks-secondary:hover { text-decoration: underline; }
-    .form-note { font-size: 0.78rem; color: #8E8074; }
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 9px 18px;
+background: #05ce78;
+color: #FFFFFF;
+text-decoration: none;
+font-weight: 700;
+font-size: 0.88rem;
+border-radius: 9999px;
+box-shadow: 0 4px 12px rgba(5, 206, 120, 0.22);
+transition: all 0.2s;
+}
+.nav-ks-btn:hover { background: #04b669; transform: translateY(-1px); }
 
-    /* Interactive EchoBox Display Showcase Simulation */
-    .display-showcase-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-    .display-stage {
-      width: 100%;
-      max-width: 440px;
-      background: linear-gradient(170deg, #FFFFFF 0%, #F6EEE5 100%);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 28px 24px 20px;
-      box-shadow: 0 20px 45px -12px rgba(184, 149, 124, 0.3);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-    /* Glowing Warm Halo */
-    .light-aura {
-      position: absolute;
-      top: 40px;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(244, 162, 97, 0.45) 0%, rgba(244, 162, 97, 0.12) 45%, transparent 70%);
-      filter: blur(28px);
-      pointer-events: none;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      z-index: 1;
-    }
+/* Hero Section */
 
-    /* Physical Showcase Body */
-    .showcase-box {
-      width: 250px;
-      position: relative;
-      z-index: 3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .showcase-acrylic {
-      width: 230px;
-      height: 280px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.35) 100%);
-      backdrop-filter: blur(5px);
-      border: 2px solid rgba(244, 162, 97, 0.5);
-      border-bottom: none;
-      border-radius: 16px 16px 0 0;
-      box-shadow: 
-        inset 0 0 24px rgba(244, 162, 97, 0.25),
-        0 0 28px rgba(244, 162, 97, 0.2);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      padding-bottom: 18px;
-      transition: all 0.3s ease;
-      overflow: hidden;
-    }
+.hero {
+padding: 40px 0 60px;
+display: grid;
+grid-template-columns: 1.05fr 0.95fr;
+gap: 48px;
+align-items: center;
+}
+.badge {
+display: inline-block;
+padding: 6px 14px;
+background: var(--badge-bg);
+border: 1px solid rgba(224, 122, 95, 0.4);
+color: var(--accent);
+font-size: 0.8rem;
+font-weight: 700;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+border-radius: 9999px;
+margin-bottom: 16px;
+}
 
-    /* Glass Reflection */
-    .showcase-acrylic::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(90deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 100%);
-      pointer-events: none;
-      transform: skewX(-15deg) translateX(-30px);
-    }
+.hero h1 {
+font-size: 2.8rem;
+line-height: 1.18;
+margin-bottom: 18px;
+letter-spacing: -0.025em;
+color: #1F1915;
+}
+.hero p.lead {
+color: var(--text-muted);
+font-size: 1.1rem;
+margin-bottom: 24px;
+line-height: 1.65;
+}
 
-    /* Display items inside */
-    .item-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      z-index: 2;
-      transition: transform 0.3s ease;
-    }
-    .item-visual {
-      font-size: 4.8rem;
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.12));
-      user-select: none;
-      line-height: 1.1;
-    }
-    .item-caption {
-      margin-top: 10px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: #5C4E43;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 3px 12px;
-      border-radius: 20px;
-      border: 1px solid rgba(224, 122, 95, 0.25);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    }
+.pills { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.pill-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: #4A4039; }
+.pill-item span.icon { color: var(--accent); font-weight: bold; }
 
-    /* Acoustic Base */
-    .showcase-base {
-      width: 250px;
-      background: linear-gradient(180deg, #3D342D 0%, #251F1A 100%);
-      border-radius: 8px 8px 14px 14px;
-      padding: 12px 16px 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 10px 24px rgba(45, 36, 29, 0.28);
-      border: 1px solid #5A4C41;
-      position: relative;
-    }
-    .base-front {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .speaker-grille {
-      display: flex;
-      gap: 3px;
-      align-items: center;
-    }
-    .speaker-grille span {
-      width: 3px;
-      height: 14px;
-      background: #7A6A5D;
-      border-radius: 2px;
-      transition: all 0.2s ease;
-    }
-    .playing .speaker-grille span:nth-child(2) { height: 20px; background: var(--gold-warm); }
-    .playing .speaker-grille span:nth-child(4) { height: 18px; background: var(--accent); }
-    .playing .speaker-grille span:nth-child(1), .playing .speaker-grille span:nth-child(5) { height: 10px; }
 
-    /* Touch Sensor Button on Showcase */
-    .btn-tap-showcase {
-      background: linear-gradient(135deg, var(--gold-warm) 0%, var(--accent) 100%);
-      color: #FFFFFF;
-      border: none;
-      font-size: 0.74rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 20px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      box-shadow: 0 2px 8px rgba(224, 122, 95, 0.4);
-      transition: transform 0.15s ease;
-    }
-    .btn-tap-showcase:hover { transform: scale(1.04); }
-    .btn-tap-showcase:active { transform: scale(0.96); }
+/* Lead Form */
+.lead-form {
+display: flex;
+flex-direction: column;
+gap: 12px;
+max-width: 480px;
+}
+.input-row { display: flex; gap: 10px; }
+.lead-form input[type="email"] {
+flex: 1;
+padding: 14px 18px;
+border-radius: 10px;
+background: #FFFFFF;
+border: 1.5px solid var(--card-border);
+color: var(--text-main);
+font-size: 0.95rem;
+outline: none;
+transition: all 0.2s;
+}
 
-    .audio-feedback {
-      margin-top: 8px;
-      font-size: 0.76rem;
-      color: #FFDFBA;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .audio-feedback.visible { opacity: 1; }
+.lead-form input[type="email"]:focus {
+border-color: var(--accent);
+box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.btn-cta {
+padding: 14px 24px;
+background: linear-gradient(135deg, var(--accent) 0%, var(--accent-warm) 100%);
+color: #FFFFFF;
+font-weight: 700;
+font-size: 0.95rem;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+white-space: nowrap;
+box-shadow: 0 4px 14px var(--accent-glow);
+transition: all 0.2s;
+}
+.btn-cta:hover {
+background: linear-gradient(135deg, var(--accent-
 
-    /* Showcase Item Switcher Tabs */
-    .showcase-switcher {
-      display: flex;
-      gap: 8px;
-      background: #FFFFFF;
-      padding: 6px;
-      border-radius: 9999px;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-    }
-    .switch-tab {
-      border: none;
-      background: transparent;
-      padding: 6px 14px;
-      border-radius: 9999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #7D6E62;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .switch-tab.active {
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-weight: 700;
-    }
+hover) 0%, #E28E49 100%);
+transform: translateY(-1px);
+}
+.form-links-row {
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 8px;
+}
+.form-note { font-size: 0.78rem; color: var(--text-muted); }
+.ks-direct-link { font-size: 0.82rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+.ks-direct-link:hover { text-decoration: underline; }
 
-    /* Trust Strip */
-    .trust-strip {
-      border-top: 1px solid var(--card-border);
-      border-bottom: 1px solid var(--card-border);
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 22px 0;
-      margin: 30px 0 70px;
-      display: flex;
-      justify-content: space-around;
-      color: #8C7D71;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+/* Hero Showcase with Real Photo */
+.hero-showcase {
+background: #FFFFFF;
+border: 1.5px solid var(--card-border);
 
-    /* Gallery Showcase: What Fits in EchoBox */
-    .gallery-section {
-      margin-bottom: 80px;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .gallery-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 28px;
-      text-align: center;
-      box-shadow: 0 4px 18px rgba(168, 142, 122, 0.06);
-      transition: transform 0.2s ease;
-    }
-    .gallery-card:hover {
-      transform: translateY(-4px);
-    }
-    .gallery-icon-box {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 16px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #FFF3EB 0%, #FFE9D9 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.8rem;
-      border: 1.5px solid rgba(224, 122, 95, 0.2);
-      box-shadow: inset 0 0 15px rgba(244, 162, 97, 0.15);
-    }
-    .gallery-card h3 {
-      font-size: 1.18rem;
-      color: #2D241D;
-      margin-bottom: 8px;
-    }
-    .gallery-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-    .gallery-badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      color: var(--accent);
-      background: var(--accent-soft);
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-top: 12px;
-    }
+border-radius: 20px;
+padding: 20px;
+box-shadow: 0 20px 40px -15px rgba(184, 148, 126, 0.2);
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.photo-frame {
+width: 100%;
+height: 380px;
+border-radius: 14px;
+overflow: hidden;
+background: #F5ECE3;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+}
+.photo-frame img {
 
-    /* Comparison Table/Cards */
-    .section-title { text-align: center; margin-bottom: 48px; }
-    .section-title h2 { font-size: 2.1rem; margin-bottom: 12px; color: #2D241D; }
-    .section-title p { color: var(--text-muted); font-size: 1.05rem; }
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: opacity 0.3s ease;
+}
+.switch-tabs {
+display: flex;
+gap: 8px;
+margin-top: 16px;
+width: 100%;
+}
+.switch-tab {
+flex: 1;
+padding: 8px 10px;
+border: 1px solid var(--card-border);
+border-radius: 8px;
+background: #FAF7F2;
+font-size: 0.78rem;
+font-weight: 700;
+color: var(--text-muted);
 
-    .comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 80px;
-    }
-    .comp-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 34px;
-      box-shadow: 0 4px 20px rgba(168, 142, 122, 0.08);
-    }
-    .comp-card.good {
-      border-color: rgba(224, 122, 95, 0.4);
-      background: linear-gradient(180deg, #FFF8F5 0%, #FFFFFF 100%);
-      box-shadow: 0 10px 30px rgba(224, 122, 95, 0.12);
-    }
-    .comp-header { font-size: 1.2rem; font-weight: 700; margin-bottom: 22px; }
-    .comp-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .comp-list li { font-size: 0.96rem; display: flex; gap: 10px; color: #4E433A; }
+cursor: pointer;
+text-align: center;
+transition: all 0.2s;
+}
+.switch-tab.active, .switch-tab:hover {
+background: var(--badge-bg);
+border-color: var(--accent);
+color: var(--accent);
+}
 
-    /* 3 Pillars Feature Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 80px;
-    }
-    .f-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 32px 28px;
-      box-shadow: 0 4px 16px rgba(168, 142, 122, 0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .f-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(168, 142, 122, 0.12);
-    }
-    .f-tag { font-size: 0.72rem; color: var(--accent); font-weight: 800; letter-spacing: 0.08em; }
-    .f-title { font-size: 1.25rem; margin: 10px 0; color: #2D241D; }
-    .f-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+/* Trust / Community Bar */
+.trust-strip {
+border-top: 1px solid var(--card-border);
+border-bottom: 1px solid var(--card-border);
+padding: 20px 0;
+margin: 20px 0 60px;
+display: flex;
+justify-content: space-around;
+color: #94887D;
+font-weight: 700;
 
-    /* Specs Section */
-    .specs-grid {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      margin-bottom: 80px;
-      box-shadow: 0 4px 16px rgba(168, 142, 122, 0.06);
-      overflow: hidden;
-    }
-    .spec-item {
-      padding: 24px;
-      border-right: 1px solid var(--card-border);
-      border-bottom: 1px solid var(--card-border);
-    }
-    .spec-item:nth-child(3n) { border-right: none; }
-    .spec-item:nth-last-child(-n+3) { border-bottom: none; }
-    .spec-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 600; }
-    .spec-val { font-weight: 700; font-size: 0.95rem; color: #2D241D; }
+font-size: 0.82rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+}
 
-    /* VIP Upsell Block */
-    .vip-section {
-      background: linear-gradient(135deg, #FFF6F0 0%, #FFEEDD 100%);
-      border: 1.5px solid rgba(224, 122, 95, 0.4);
-      border-radius: 20px;
-      padding: 50px 32px;
-      text-align: center;
-      margin-bottom: 80px;
-      box-shadow: 0 12px 40px rgba(224, 122, 95, 0.15);
-    }
-    .vip-section h2 { font-size: 2.1rem; margin-bottom: 14px; color: #2D241D; }
-    .vip-list { max-width: 600px; margin: 26px auto 34px; text-align: left; display: flex; flex-direction: column; gap: 14px; }
-    .vip-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-    .vip-btn {
-      display: inline-block;
-      padding: 16px 40px;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--gold-warm) 100%);
-      color: #FFFFFF;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 12px;
-      transition: all 0.25s ease;
-      box-shadow: 0 4px 18px rgba(224, 122, 95, 0.35);
-    }
-    .vip-btn:hover { 
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(224, 122, 95, 0.45);
-    }
-    .vip-ks-link {
-      color: #0B6E40;
-      font-size: 0.92rem;
-      font-weight: 600;
-      text-decoration: underline;
-    }
+/* Section Title */
+.section-title { text-align: center; margin-bottom: 44px; }
+.section-title h2 { font-size: 2.1rem; margin-bottom: 10px; color: #1F1915; }
+.section-title p { color: var(--text-muted); font-size: 1.02rem; }
 
-    /* FAQ */
-    .faq { max-width: 760px; margin: 0 auto 80px; }
-    .faq-item { border-bottom: 1px solid var(--card-border); padding: 20px 0; }
-    .faq-q { font-weight: 700; font-size: 1.05rem; margin-bottom: 8px; color: #2D241D; }
-    .faq-a { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+/* Comparison Cards */
+.comparison {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 24px;
+margin-bottom: 80px;
+}
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--card-border);
-      padding: 40px 0;
-      text-align: center;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      background-color: rgba(255, 255, 255, 0.4);
-    }
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    footer a:hover { text-decoration: underline; }
+.comp-card {
+background: var(--card-bg);
+border: 1.5px solid var(--card-border);
+border-radius: 16px;
+padding: 32px;
+box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+.comp-card.good {
+border-color: rgba(224, 122, 95, 0.4);
+background: linear-gradient(180deg, #FFFDFB 0%, #FFF8F3 100%);
+}
+.comp-header { font-size: 1.2rem; font-weight: 800; margin-bottom: 18px; }
+.comp-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.comp-list li { font-size: 0.95rem; display: flex; gap: 10px; color: #4A4039; }
 
-    /* Mobile Responsive */
-    @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; gap: 36px; }
-      .input-row { flex-direction: column; }
-      .comparison, .features-grid, .specs-grid, .gallery-grid { grid-template-columns: 1fr; }
-      .specs-grid .spec-item { border-right: none; border-bottom: 1px solid var(--card-border); }
-      .trust-strip { flex-wrap: wrap; gap: 16px; text-align: center; }
-      .navbar { flex-direction: column; gap: 14px; align-items: flex-start; }
-    }
-  </style>
+/* Prototype Gallery */
+
+.gallery-grid {
+display: grid;
+grid-template-columns: 1.1fr 0.9fr;
+gap: 24px;
+margin-bottom: 80px;
+}
+.gallery-card {
+background: #FFFFFF;
+border: 1.5px solid var(--card-border);
+border-radius: 16px;
+overflow: hidden;
+box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+.gallery-card img {
+width: 100%;
+height: 320px;
+object-fit: cover;
+display: block;
+}
+.gallery-card-body {
+
+padding: 22px 24px;
+}
+.gallery-card-body h3 { font-size: 1.15rem; margin-bottom: 8px; color: #1F1915; }
+.gallery-card-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
+
+/* Features Grid */
+.features-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+margin-bottom: 80px;
+}
+.f-card {
+background: var(--card-bg);
+border: 1.5px solid var(--card-border);
+border-radius: 16px;
+padding: 28px;
+box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+
+}
+.f-tag { font-size: 0.72rem; color: var(--accent); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.f-title { font-size: 1.25rem; margin: 10px 0; color: #1F1915; }
+.f-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+
+/* Specs Grid */
+.specs-grid {
+background: var(--card-bg);
+border: 1.5px solid var(--card-border);
+border-radius: 16px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+margin-bottom: 80px;
+overflow: hidden;
+}
+.spec-item {
+
+padding: 24px;
+border-right: 1px solid var(--card-border);
+border-bottom: 1px solid var(--card-border);
+}
+.spec-item:nth-child(3n) { border-right: none; }
+.spec-item:nth-last-child(-n+3) { border-bottom: none; }
+.spec-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 700; }
+.spec-val { font-weight: 700; font-size: 0.98rem; color: #2D2621; }
+
+/* VIP Section */
+.vip-section {
+background: linear-gradient(180deg, #FFFFFF 0%, #FFF5ED 100%);
+border: 2px solid var(--accent);
+border-radius: 20px;
+padding: 56px 36px;
+
+text-align: center;
+margin-bottom: 80px;
+box-shadow: 0 20px 45px -10px rgba(224, 122, 95, 0.18);
+scroll-margin-top: 40px;
+}
+.vip-section h2 { font-size: 2.2rem; margin-bottom: 14px; color: #1F1915; }
+.vip-list { max-width: 620px; margin: 26px auto 34px; text-align: left; display: flex; flex-direction: column; gap: 14px; }
+.vip-btn {
+display: inline-block;
+padding: 17px 42px;
+background: linear-gradient(135deg, var(--accent) 0%, var(--accent-warm) 100%);
+color: #FFFFFF;
+text-decoration: none;
+font-weight: 800;
+font-size: 1.15rem;
+
+border-radius: 12px;
+box-shadow: 0 8px 24px rgba(224, 122, 95, 0.35);
+transition: all 0.2s;
+}
+.vip-btn:hover {
+background: linear-gradient(135deg, var(--accent-hover) 0%, #E28E49 100%);
+transform: translateY(-2px);
+box-shadow: 0 10px 28px rgba(224, 122, 95, 0.45);
+}
+
+/* FAQ */
+.faq { max-width: 760px; margin: 0 auto 90px; }
+.faq-item { border-bottom: 1px solid var(--card-border); padding: 20px 0; }
+.faq-q { font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; color: #1F1915; }
+.faq-a { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+
+/* Footer */
+footer {
+border-top: 1px solid var(--card-border);
+padding: 40px 0 50px;
+text-align: center;
+font-size: 0.88rem;
+color: var(--text-muted);
+}
+footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
+footer a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 860px) {
+.hero { grid-template-columns: 1fr; gap: 36px; }
+.gallery-grid, .comparison, .features-grid, .specs-grid { grid-template-columns: 1fr; }
+.specs-grid .spec-item { border-right: none; border-bottom: 1px solid var(--card-border); }
+
+.input-row { flex-direction: column; }
+.trust-strip { flex-wrap: wrap; gap: 14px; text-align: center; }
+}
+</style>
 </head>
 <body>
 
-  <!-- Top Urgency Bar -->
-  <div class="top-bar">
-    🔥 Kickstarter Launch Approaching — 
-    <a href="https://www.kickstarter.com/projects/lakso/echobox-the-smart-sound-and-display-showcase" target="_blank" rel="noopener noreferrer">
-      Reserve Now for 30% OFF Super Early Bird
-    </a>
-  </div>
+<!-- 1. Top Urgency Bar -->
+<a href="#vipSection" class="top-bar-link" onclick="scrollToVip(event)">
+🔥 Kickstarter Pre-Launch Is Live — <strong>Reserve for $`1 & Lock In 30% OFF Super Early Bird</strong> ↓
+</a>
 
-  <div class="container">
+<!-- 2. Navbar -->
+<nav class="navbar">
+<a href="https://auroraphxgrove.com/" class="brand-logo">
 
-    <!-- Navigation Bar -->
-    <header class="navbar">
-      <a href="#" class="nav-brand">
-        EchoBox
-        <span class="tag">On Kickstarter</span>
-      </a>
-      <div class="nav-links">
-        <a href="https://www.kickstarter.com/projects/lakso/echobox-the-smart-sound-and-display-showcase" target="_blank" rel="noopener noreferrer" class="btn-ks-nav">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
-          </svg>
-          Follow on Kickstarter ↗
-        </a>
-      </div>
-    </header>
+<span>✨</span> EchoBox
+</a>
+<a href="https://www.kickstarter.com/projects/lakso/echobox-the-smart-sound-and-display-showcase" target="_blank" class="nav-ks-btn">
+<span>💚</span> Follow on Kickstarter ↗
+</a>
+</nav>
 
-    <!-- Section 1: Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <span class="badge">
-          <span class="badge-dot"></span>
-          Kickstarter Pre-Launch Special
-        </span>
-        <h1>Bring Silent Keepsakes to Life with Warm Light & Sound.</h1>
-        <p class="lead">The acoustic edge-lit display showcase crafted for your favorite figures, polaroids, and desk setup memories.</p>
-        
-        <div class="pills">
-          <div class="pill-item"><span class="icon">✓</span> <strong>30% OFF Super Early Bird</strong> guaranteed on launch day</div>
-          <div class="pill-item"><span class="icon">✓</span> Free Kickstarter-exclusive engraved backplate</div>
-          <div class="pill-item"><span class="icon">✓</span> 100% plug & play via USB-C (Zero apps required)</div>
-        </div>
+<div class="container">
 
-        <form class="lead-form" id="leadForm" onsubmit="handleLeadSubmit(event)">
-          <div class="input-row">
-            <input type="email" id="userEmail" placeholder="Enter your email address..." required>
-            <button type="submit" class="btn-cta">Unlock 30% OFF →</button>
-          </div>
-          <div class="hero-actions-secondary">
-            <span class="form-note">🔒 Zero spam. Instant access to the VIP Reservation Page.</span>
-            <a href="https://www.kickstarter.com/projects/lakso/echobox-the-smart-sound-and-display-showcase" target="_blank" rel="noopener noreferrer" class="link-ks-secondary">
-              Or visit our Kickstarter project ↗
-            </a>
-          </div>
-        </form>
-      </div>
+<!-- 3. Hero Section -->
+<section class="hero">
+<div class="hero-content">
+<span class="badge">Kickstarter VIP Pre-Launch</span>
+<h1>Your desk holds your favorite things. Now, they can talk back.</h1>
+<p class="lead">
+A quiet, warm-lit desktop sanctuary for your 
 
-      <!-- Interactive EchoBox Showcase Display Simulation -->
-      <div class="display-showcase-container">
-        <div class="display-stage">
-          <div class="light-aura" id="lightAura"></div>
-          
-          <div class="showcase-box" id="showcaseBox">
-            <div class="showcase-acrylic" id="showcaseAcrylic">
-              <div class="item-content" id="itemContent">
-                <div class="item-visual" id="itemVisual">🧸</div>
-                <div class="item-caption" id="itemCaption">Anime Figure & Collectible</div>
-              </div>
-            </div>
+figures, polaroids, and the memories you never want to fade. One gentle tap fills your corner with 2700K ambient light and clear, comforting sound.
+</p>
 
-            <div class="showcase-base">
-              <div class="base-front">
-                <div class="speaker-grille" id="speakerGrille">
-                  <span></span><span></span><span></span><span></span><span></span>
-                </div>
-                <button type="button" class="btn-tap-showcase" onclick="triggerEchoDemo()">
-                  <span>Tap to Play</span> 🔊
-                </button>
-              </div>
-              <div class="audio-feedback" id="audioFeedback">
-                <span>🎵 "I love you 3,000..."</span>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="pills">
+<div class="pill-item"><span class="icon">✓</span> <strong>Guaranteed 30% OFF Super Early Bird</strong> (no morning rush)</div>
+<div class="pill-item"><span class="icon">✓</span> Free Kickstarter-exclusive engraved metal backplate</div>
+<div class="pill-item"><span class="icon">✓</span> 100% plug & play via USB-C (Zero app, zero accounts)</div>
+</div>
 
-        <!-- Switch Item Tabs -->
-        <div class="showcase-switcher">
-          <button type="button" class="switch-tab active" onclick="switchDisplayItem('figure')">🧸 Collectibles</button>
-          <button type="button" class="switch-tab" onclick="switchDisplayItem('polaroid')">📷 Polaroids</button>
-          <button type="button" class="switch-tab" onclick="switchDisplayItem('standee')">✨ OST Standees</button>
-        </div>
-      </div>
-    </section>
+<form class="lead-form" id="leadForm" onsubmit="handleLeadSubmit(event)">
 
-    <!-- Section 2: Social Proof / Community Bar -->
-    <div class="trust-strip">
-      <span>OFFICIAL KICKSTARTER PROJECT</span>
-      <span>DESKTOPIA</span>
-      <span>MINIMAL DESK SETUPS</span>
-      <span>ACOUSTIC LABS</span>
-    </div>
+<div class="input-row">
+<input type="email" id="userEmail" placeholder="Your best email address..." required>
+<button type="submit" class="btn-cta">Unlock 30% OFF →</button>
+</div>
+<div class="form-links-row">
+<span class="form-note">🔒 No spam. Instant access to the VIP reservation.</span>
+<a href="https://www.kickstarter.com/projects/lakso/echobox-the-smart-sound-and-display-showcase" target="_blank" class="ks-direct-link">
+View official Kickstarter page →
+</a>
+</div>
+</form>
+</div>
 
-    <!-- Section 3: What Can You Display inside EchoBox? -->
-    <section class="gallery-section">
-      <div class="section-title">
-        <h2>Give Every Keepsake a Voice</h2>
-        <p>Whatever sits silently on your desk can now speak right back to you.</p>
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-card">
-          <div class="gallery-icon-box">🧸</div>
-          <h3>Figures & Collectibles</h3>
-          <p>Store your favorite anime figures or designer toys. Tap the base to trigger iconic battle lines or theme songs.</p>
-          <span class="gallery-badge">Dust-Free & Edge-Lit</span>
-        </div>
-        <div class="gallery-card">
-          <div class="gallery-icon-box">📸</div>
-          <h3>Polaroids & Loved Ones</h3>
-          <p>Preserve tender voice memos from loved ones miles away alongside a vintage snapshot under 2700K warm glow.</p>
-          <span class="gallery-badge">Emotional Sanctuaries</span>
-        </div>
-        <div class="gallery-card">
-          <div class="gallery-icon-box">🎶</div>
-          <h3>Acrylic Standees & Quotes</h3>
-          <p>Pair transparent acrylic characters with memorable quotes or relaxing lo-fi soundtracks for desk focus.</p>
-          <span class="gallery-badge">Tuned Voice Resonance</span>
-        </div>
-      </div>
-    </section>
+<!-- Hero Real Photo Switcher -->
 
-    <!-- Section 4: The Problem vs. EchoBox -->
-    <section>
-      <div class="section-title">
-        <h2>Ordinary Display vs. EchoBox</h2>
-        <p>Why standard desk acrylic cases fall short of preserving memories.</p>
-      </div>
-      <div class="comparison">
-        <div class="comp-card">
-          <div class="comp-header" style="color: #D9534F;">❌ Standard Acrylic Cases</div>
-          <ul class="comp-list">
-            <li><span>•</span> Harsh, cold white LEDs that ruin the cozy evening ambiance</li>
-            <li><span>•</span> Cold and static — figures remain silent and lifeless</li>
-            <li><span>•</span> Clunky companion apps, Bluetooth dropouts, and accounts</li>
-          </ul>
-        </div>
-        <div class="comp-card good">
-          <div class="comp-header" style="color: var(--accent);">✅ The EchoBox Experience</div>
-          <ul class="comp-list">
-            <li><span>✓</span> <strong>2700K Edge-Lit Ambience:</strong> Glare-free, warm illumination calibrated for desk setups</li>
-            <li><span>✓</span> <strong>Tuned Resonance Chamber:</strong> Brings character voice lines and soundscapes to life</li>
-            <li><span>✓</span> <strong>Instant USB-C Sync:</strong> True drag-and-drop file storage with no software barriers</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<div class="hero-showcase">
+<div class="photo-frame">
+<img id="mainShowcaseImg" src="echobox-bulbasaur-lit.jpg" alt="EchoBox Prototype Showcase with warm 2700K lighting">
+</div>
+<div class="switch-tabs">
+<button type="button" class="switch-tab active" onclick="switchPhoto('echobox-bulbasaur-lit.jpg', this)">
+Bulbasaur (Lit)
+</button>
+<button type="button" class="switch-tab" onclick="switchPhoto('echobox-natsume.jpg', this)">
+Natsume Nendoroid
+</button>
+<button type="button" class="switch-tab" onclick="switchPhoto('echobox-empty.jpg', this)">
 
-    <!-- Section 5: 3 Core Features -->
-    <section>
-      <div class="section-title">
-        <h2>Engineered for Your Desk</h2>
-        <p>A minimalist design housing meticulous acoustic and optical engineering.</p>
-      </div>
-      <div class="features-grid">
-        <div class="f-card">
-          <span class="f-tag">OPTICAL CALIBRATION</span>
-          <h3 class="f-title">2700K Edge-Lit Glow</h3>
-          <p class="f-desc">Soft, ambient lighting diffused through a precision light-guide perimeter. Eliminates harsh glare while bathing collectibles in warm museum-grade light.</p>
-        </div>
-        <div class="f-card">
-          <span class="f-tag">IMMERSIVE AUDIO</span>
-          <h3 class="f-title">Tuned Resonance Chamber</h3>
-          <p class="f-desc">Compact acoustic vocal chamber engineered specifically for spoken words, OST tracks, and personal voice memos with natural depth.</p>
-        </div>
-        <div class="f-card">
-          <span class="f-tag">FRICTIONLESS TECH</span>
-          <h3 class="f-title">USB-C Drag & Drop</h3>
-          <p class="f-desc">Plug into PC/Mac, drag your audio files over, and unplug. No mandatory Bluetooth pairing, accounts, or battery degradation.</p>
-        </div>
-      </div>
-    </section>
+Light Guide Ring
+</button>
+</div>
+</div>
+</section>
 
-    <!-- Section 6: Tech Specs -->
-    <section>
-      <div class="section-title">
-        <h2>Hardware Specifications</h2>
-      </div>
-      <div class="specs-grid">
-        <div class="spec-item">
-          <div class="spec-label">Lighting System</div>
-          <div class="spec-val">2700K Ambient Edge-Lit (CRI > 90)</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label">Audio Module</div>
-          <div class="spec-val">Integrated Micro Acoustic Cavity</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label">Connectivity</div>
-          <div class="spec-val">USB-C High Speed Interface</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label">Controls</div>
-          <div class="spec-val">Capacitive Hidden Touch Sensor</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label">Chassis Material</div>
-          <div class="spec-val">Warm Aluminum Frame + Optical Acrylic</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label">Storage</div>
-          <div class="spec-val">Internal Flash Memory for Audio</div>
-        </div>
-      </div>
-    </section>
+<!-- 4. Trust Strip -->
+<div class="trust-strip">
+<span>DESKTOPIA FAVORITE</span>
+<span>2700K WARM GLOW</span>
+<span>ANODIZED METAL BASE</span>
+<span>HONG KONG DESIGN</span>
+</div>
 
-    <!-- Section 7: Funnel VIP Upsell Block -->
-    <section class="vip-section" id="vipSection">
-      <span class="badge">Backer Upgrade Privilege</span>
-      <h2>Wait! Lock in Your 30% VIP Discount for $1</h2>
-      <p style="color: var(--text-muted); max-width: 540px; margin: 0 auto;">
-        Kickstarter Super Early Bird tiers sell out within the first 10 minutes. Guarantee your unit and rewards beforehand.
-      </p>
+<!-- 5. Real Prototype Photo Gallery -->
+<section>
+<div class="section-title">
+<h2>In the Metal: Real Working Prototypes</h2>
+<p>No 3D renders or empty promises. Here is what we have been hand-testing in our studio.</
 
-      <div class="vip-list">
-        <div class="pill-item"><span class="icon">💎</span> <strong>Guaranteed 30% Tier:</strong> Even if early bird sells out immediately.</div>
-        <div class="pill-item"><span class="icon">🎖️</span> <strong>Free Custom Backplate:</strong> Kickstarter-exclusive laser engraved badge included.</div>
-        <div class="pill-item"><span class="icon">🛡️</span> <strong>100% Refundable:</strong> Change your mind on launch day? Full refund instantly.</div>
-      </div>
+p>
+</div>
 
-      <div class="vip-actions">
-        <!-- Replace '#' with your actual Stripe $1.00 USD Payment Link -->
-        <a href="https://buy.stripe.com/your_stripe_payment_link_here" target="_blank" class="vip-btn">
-          Secure My VIP Spot for $1 →
-        </a>
-        <a href="https://www.kickstarter.com/projects/lakso/echobox-the-smart-sound-and-display-showcase" target="_blank" rel="noopener noreferrer" class="vip-ks-link">
-          Or view project preview directly on Kickstarter ↗
-        </a>
-      </div>
-      <p style="font-size: 0.8rem; color: #8E8074; margin-top: 14px;">Powered by Stripe. 256-bit secure encrypted checkout.</p>
-    </section>
+<div class="gallery-grid">
+<div class="gallery-card">
+<img src="echobox-duo.jpg" alt="EchoBox Dual Sizes Black and White Bases">
+<div class="gallery-card-body">
+<h3>Two Sizes, Two Timeless Finishes</h3>
+<p>Available in matte Obsidian Black and Soft Ivory White. Designed to nest neatly side-by-side or stack on your monitor riser shelf.</p>
+</div>
+</div>
+<div class="gallery-card">
+<img src="echobox-empty.jpg" alt="Precision Light Guide Ring and Acrylic Chamber">
+<div class="gallery-card-body">
+<h3>Engineered Light Guide Perimeter</h3>
+<p>Notice the subtle recessed perimeter groove. 
 
-    <!-- Section 8: FAQ -->
-    <section class="faq">
-      <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How does the $1 reservation work?</div>
-        <div class="faq-a">Your $1 deposit guarantees you the lowest launch price (30% OFF Super Early Bird) on day one. It is 100% refundable at any time before or during the campaign.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Where can I see the full Kickstarter campaign?</div>
-        <div class="faq-a">You can view the pre-launch preview and click "Notify me on launch" directly on our <a href="https://www.kickstarter.com/projects/lakso/echobox-the-smart-sound-and-display-showcase" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">Official Kickstarter Page</a>.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Do I need an app or Wi-Fi to use EchoBox?</div>
-        <div class="faq-a">No. EchoBox is 100% offline-ready. Plug it via USB-C to drag and drop audio files, then tap to trigger illumination and playback.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">When will the Kickstarter campaign go live?</div>
-        <div class="faq-a">We are wrapping up pre-production tooling. All VIP backers will receive private email notifications 24 hours before the public launch.</div>
-      </div>
-    </section>
+High-CRI 2700K warm LEDs cast light upward through the edges, illuminating keepsakes without harsh glare in your eyes.</p>
+</div>
+</div>
+</div>
+</section>
 
-  </div>
+<!-- 6. Problem vs EchoBox -->
+<section>
+<div class="section-title">
+<h2>The Honest Truth: Why We Built EchoBox</h2>
+<p>Why ordinary acrylic display boxes always end up feeling a little lonely.</p>
+</div>
+<div class="comparison">
+<div class="comp-card">
+<div class="comp-header" style="color: #D9534F;">❌ Generic Acrylic Cases</div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2026 EchoBox Showcase by Auroratcl.Lakso. All rights reserved.</p>
-      <p style="margin-top: 8px; font-size: 0.82rem;">
-        Back us on <a href="https://www.kickstarter.com/projects/lakso/echobox-the-smart-sound-and-display-showcase" target="_blank" rel="noopener noreferrer">Kickstarter</a> · Handcrafted with warmth for desk spaces.
-      </p>
-    </div>
-  </footer>
+<ul class="comp-list">
+<li><span>•</span> <strong>Harsh, sterile 6500K LEDs:</strong> Makes your desk feel like an operating room at night.</li>
+<li><span>•</span> <strong>Cold and silent:</strong> Figures stay silent and slowly collect dust behind plastic.</li>
+<li><span>•</span> <strong>App fatigue:</strong> Buggy companion apps that disconnect after two days.</li>
+</ul>
+</div>
+<div class="comp-card good">
+<div class="comp-header" style="color: var(--accent);">✅ The EchoBox Feeling</div>
+<ul class="comp-list">
+<li><span>✓</span> <strong>Calibrated 2700K Warm Glow:</strong> A soft halo that blends into ambient desk lamps.</li>
+<li><span>✓</span> <strong>Tuned Vocal 
 
-  <script>
-    // Display Items Data
-    const displayItems = {
-      figure: {
-        visual: "🧸",
-        caption: "Anime Figure & Collectible",
-        soundQuote: "🎵 'I love you 3,000...'"
-      },
-      polaroid: {
-        visual: "📷",
-        caption: "Family Polaroid & Voice Note",
-        soundQuote: "🎙️ 'Happy Birthday from home! Miss you!'"
-      },
-      standee: {
-        visual: "✨",
-        caption: "Acrylic Standee & Theme OST",
-        soundQuote: "🎶 (Playing Anime Lo-fi OST...)"
-      }
-    };
+Chamber:</strong> Front push buttons trigger clean voice notes and character lines.</li>
+<li><span>✓</span> <strong>Pure USB-C Freedom:</strong> Drag and drop audio like a USB thumb drive. No WiFi or logins required.</li>
+</ul>
+</div>
+</div>
+</section>
 
-    let currentItemKey = 'figure';
-    let isPlaying = false;
+<!-- 7. 3 Core Features -->
+<section>
+<div class="section-title">
+<h2>Built for Everyday Desk Living</h2>
+<p>Simple tactile joys that make sitting down at your desk feel a little warmer.</p>
+</div>
+<div class="features-grid">
+<div class="f-card">
+<span class="f-tag">OPTICAL CRAFT</span>
 
-    function switchDisplayItem(key) {
-      currentItemKey = key;
-      const item = displayItems[key];
-      
-      // Update visual and text
-      document.getElementById('itemVisual').innerText = item.visual;
-      document.getElementById('itemCaption').innerText = item.caption;
-      
-      // Update active tab button
-      const tabs = document.querySelectorAll('.switch-tab');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      event.target.classList.add('active');
+<h3 class="f-title">2700K Edge-Lit Halo</h3>
+<p class="f-desc">Custom light-guide perimeter diffuses warm light upward. Your figures and photos glow gently without reflecting blinding spots on your monitor.</p>
+</div>
+<div class="f-card">
+<span class="f-tag">ACOUSTIC CHAMBER</span>
+<h3 class="f-title">Tuned for Spoken Words</h3>
+<p class="f-desc">Internal acoustic cavity tuned specifically for voice clarity. A parent's greeting, an anime catchphrase, or a video game OST sounds intimate and clear.</p>
+</div>
+<div class="f-card">
+<span class="f-tag">FRICTIONLESS TECH</span>
+<h3 class="f-title">True Drag & Drop</h3>
+<p class="f-desc">Plug the USB-C cable into your 
 
-      // Reset audio feedback text
-      const audioFeedback = document.getElementById('audioFeedback');
-      audioFeedback.innerText = item.soundQuote;
-    }
+Mac or PC, copy your MP3/WAV files over, and you are done. Zero mandatory firmware updates or apps.</p>
+</div>
+</div>
+</section>
 
-    function triggerEchoDemo() {
-      if (isPlaying) return;
-      isPlaying = true;
+<!-- 8. Hardware Specifications -->
+<section>
+<div class="section-title">
+<h2>Hardware Specifications</h2>
+</div>
+<div class="specs-grid">
+<div class="spec-item">
+<div class="spec-label">Illumination</div>
+<div class="spec-val">2700K Edge-Lit Halo (CRI > 90)</div>
+</div>
+<div class="spec-item">
+<div class="spec-label">Acoustic Driver</div>
 
-      const aura = document.getElementById('lightAura');
-      const acrylic = document.getElementById('showcaseAcrylic');
-      const speaker = document.getElementById('speakerGrille');
-      const audioFeedback = document.getElementById('audioFeedback');
-      const item = displayItems[currentItemKey];
+<div class="spec-val">Integrated Micro Vocal Cavity</div>
+</div>
+<div class="spec-item">
+<div class="spec-label">Connectivity</div>
+<div class="spec-val">USB-C Data & Power Interface</div>
+</div>
+<div class="spec-item">
+<div class="spec-label">User Controls</div>
+<div class="spec-val">Front Dual Push Buttons</div>
+</div>
+<div class="spec-item">
+<div class="spec-label">Materials</div>
+<div class="spec-val">Matte Base + Optical Acrylic Cube</div>
+</div>
+<div class="spec-item">
+<div class="spec-label">Audio Storage</div>
 
-      // Glow pulse & soundwave animation
-      aura.style.transform = 'scale(1.18)';
-      acrylic.style.boxShadow = 'inset 0 0 35px rgba(244, 162, 97, 0.45), 0 0 38px rgba(244, 162, 97, 0.35)';
-      speaker.classList.add('playing');
-      
-      audioFeedback.innerText = item.soundQuote;
-      audioFeedback.classList.add('visible');
+<div class="spec-val">Internal Flash (Drag & Drop USB)</div>
+</div>
+</div>
+</section>
 
-      // Finish simulated playback
-      setTimeout(() => {
-        aura.style.transform = 'scale(1)';
-        acrylic.style.boxShadow = 'inset 0 0 24px rgba(244, 162, 97, 0.25), 0 0 28px rgba(244, 162, 97, 0.2)';
-        speaker.classList.remove('playing');
-        audioFeedback.classList.remove('visible');
-        isPlaying = false;
-      }, 2800);
-    }
+<!-- 9. VIP Upsell Section -->
+<section class="vip-section" id="vipSection">
+<span class="badge">Backer Upgrade Privilege</span>
+<h2>Wait! Lock in Your 30% VIP Discount for `$1</h2>
+<p style="color: var(--text-muted); max-width: 580px; margin: 0 auto; font-size: 1.05rem;">
+Kickstarter Super Early Bird tiers sell out rapidly. Your $1 deposit guarantees you the lowest price on launch day—no rush, no stress.
+</p>
 
-    function handleLeadSubmit(e) {
-      e.preventDefault();
-      const email = document.getElementById('userEmail').value;
-      console.log("Captured Email:", email);
+<div class="vip-list">
 
-      const vipTarget = document.getElementById('vipSection');
-      vipTarget.scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
+<div class="pill-item"><span class="icon">💎</span> <strong>Guaranteed 30% Off:</strong> Super Early Bird price locked in, even if public slots run out.</div>
+<div class="pill-item"><span class="icon">🎖️</span> <strong>Free Custom Backplate:</strong> Kickstarter-exclusive laser-engraved badge included.</div>
+<div class="pill-item"><span class="icon">🛡️</span> <strong>100% Fully Refundable:</strong> Change your mind before shipping? One click full refund.</div>
+</div>
+
+<!-- 請將此處替換為您的真實 Stripe 支付連結 -->
+<a href="https://buy.stripe.com/your_actual_stripe_payment_link_here" target="_blank" class="vip-btn" id="stripeCheckoutBtn">
+Secure My VIP Spot for $1 →
+
+</a>
+<p style="font-size: 0.8rem; color: #8A7E75; margin-top: 16px;">
+Processed securely via Stripe. 256-bit SSL encrypted checkout.
+</p>
+</section>
+
+<!-- 10. FAQ -->
+<section class="faq">
+<div class="section-title">
+<h2>Frequently Asked Questions</h2>
+</div>
+<div class="faq-item">
+<div class="faq-q">How does the $1 reservation work?</div>
+<div class="faq-a">Your $1 deposit guarantees you the lowest launch price (30% OFF Super Early Bird) on day one. It is 100% refundable at any time before or during the campaign.</div>
+
+</div>
+<div class="faq-item">
+<div class="faq-q">Do I need an app or Wi-Fi to use EchoBox?</div>
+<div class="faq-a">No. EchoBox is 100% offline-ready. Plug it via USB-C to drag and drop audio files, then tap to trigger illumination and playback.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">When will the Kickstarter campaign go live?</div>
+<div class="faq-a">We are wrapping up pre-production tooling. All VIP backers will receive private email notifications 24 hours before the public launch.</div>
+</div>
+</section>
+
+</div>
+
+
+<!-- 11. Footer -->
+<footer>
+<p>© 2026 EchoBox by Auroratcl.Lakso. All rights reserved.</p>
+<p style="margin-top: 6px;">
+<a href="https://www.kickstarter.com/projects/lakso/echobox-the-smart-sound-and-display-showcase" target="_blank">
+Official Kickstarter Project Page ↗
+</a>
+</p>
+</footer>
+
+<script>
+// 平滑滾動到 VIP 區塊
+function scrollToVip(e) {
+if (e) e.preventDefault();
+const target = document.getElementById('vipSection');
+
+if (target) {
+target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+}
+
+// Email 送出後自動滾動到 VIP 區
+function handleLeadSubmit(e) {
+e.preventDefault();
+const email = document.getElementById('userEmail').value;
+console.log("Captured VIP Email:", email);
+scrollToVip();
+}
+
+// 照片切換互動
+function switchPhoto(imgSrc, btn) {
+const img = document.getElementById('mainShowcaseImg');
+img.style.opacity = '0';
+
+setTimeout(() => {
+img.src = imgSrc;
+img.style.opacity = '1';
+}, 200);
+
+document.querySelectorAll('.switch-tab').forEach(t => t.classList.remove('active'));
+btn.classList.add('active');
+}
+</script>
 </body>
 </html>
